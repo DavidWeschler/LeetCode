@@ -2,7 +2,7 @@
 ----------------------------
 Leetcode: Top-Interview-150
 Array / String
-Merge sorted array
+Remove Duplicates from sorted array
 
 Time complexity: O(N)
 Space complexity: O(1)

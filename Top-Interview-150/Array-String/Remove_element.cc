@@ -2,7 +2,7 @@
 ----------------------------
 Leetcode: Top-Interview-150
 Array / String
-Merge sorted array
+Remove element
 ----------------------------
 
 Task:

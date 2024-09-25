@@ -18,8 +18,12 @@ s and t consist of lowercase English letters.
 '''
 # Time complexity: O(s+t)
 
+# from collections import Counter 
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # return Counter(s) == Counter(t)
+    
         if len(s) != len(t):
             return False
         
@@ -35,6 +39,9 @@ class Solution:
                 return False
         
         return True
+    
+
+    #Note: we can write the whole func in 1 line of code: return Counter(s) == Counter(t)
 
 sol = Solution()
 print(sol.isAnagram("racecar", "carrace"))

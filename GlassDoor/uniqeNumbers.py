@@ -40,7 +40,7 @@ class Solution:
                     curr = 0
                     currNum = arr[i]
             curr += 1
-        return True
+        return not curr in occur
 
 
 

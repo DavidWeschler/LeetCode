@@ -23,6 +23,9 @@ Constraints:
 
 from typing import List
 
+# Time complexity: O(nlogn)
+# Space complexity: O(n)
+
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         if not arr:
@@ -42,6 +45,9 @@ class Solution:
             curr += 1
         return not curr in occur
 
+# class Solution2:
+#     def uniqueOccurrences(self, arr: List[int]) -> bool:
+        
 
 
 if __name__ == "__main__":

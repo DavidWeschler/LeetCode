@@ -165,5 +165,93 @@ print(factorial(-5))
 print(factorial(5))
 
 """--------------------------------------------------------------------------------""" 
+# Bug: doesnt handle spaces or uppercases
+# def check_palindrome(word):
+#     return word == word[::-1]
+
+# fix:
+def check_palindrome(word):
+    original = word
+    word = word.lower().replace(" ", "")
+    return word == word[::-1]
+
+print(check_palindrome("racecar"))
+print(check_palindrome("Race Car "))
+print(check_palindrome("hello"))
+
+"""--------------------------------------------------------------------------------"""
+# Bug: if word is not in dict then we will get a keyError
+# def get_most_frequent_word(words):
+#     frequency = {}
+#     for word in words:
+#         frequency[word] += 1
+    
+#     return max(frequency, key=frequency.get)
+
+
+# fix 1:
+# def get_most_frequent_word(words):
+#     frequency = {}
+#     for word in words:
+#         if word in frequency:
+#             frequency[word] += 1
+#         else:
+#             frequency[word] = 1
+    
+#     return max(frequency, key=frequency.get)
+
+# fix 2: 
+def get_most_frequent_word(words):
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    
+    return max(frequency, key=frequency.get)
+
+
+word_list = ["apple", "banana", "apple", "orange", "banana", "apple"]
+print(get_most_frequent_word(word_list))
+
+"""--------------------------------------------------------------------------------""" 
+# Bug: not doint its purposes
+# def flatten_list(lst):
+#     flat_list = []
+#     for sublist in lst:
+#         flat_list.append(sublist)
+#     return flat_list
+
+# fix:
+# def flatten_list(lst):
+#     flatten_list = []
+#     for sublist in lst:
+#         for element in sublist:
+#             flatten_list.append(element)
+#     return flatten_list
+
+def flatten_list(lst):
+    return [x for sub in lst for x in sub]
+
+nested_list = [[1, 2, 3], [4, 5], [6, 7, 8]]
+print(flatten_list(nested_list))
+
+"""--------------------------------------------------------------------------------""" 
+# Bug:
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+
+#     def greet():
+#         return f"Hello, my name is {self.name}"
+
+# Fix:
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        return f"Hello, my name is {self.name}"
+    
+p = Person("David")
+print(p.greet())
+
 '''
-# Bug: 
